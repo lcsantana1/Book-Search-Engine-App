@@ -7,8 +7,8 @@ This application allows users to search for books and save them after creating a
 
   ## Table of contents
   * [Installation](#installation)
-  * [Screenshot] (#screenshot)
-  * [User Story](#user story)
+  * [Screenshot](#screenshot)
+  * [User Story](#userstory)
   * [Questions](#questions)
   
   ## Installation
