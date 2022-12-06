@@ -32,7 +32,7 @@ const resolvers = {
 
             const correctPw = await user.isCorrectPassword(password);
 
-            if(!correctPW) {
+            if(!correctPw) {
                 throw new AuthenticationError('incorrect credentials');
             }
 
@@ -40,11 +40,11 @@ const resolvers = {
             return {token, user};
         },
 
-        saveBook: async (parent, { book }, context) => {
+        saveBook: async (parent, { input }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedBooks: book } },
+                    { $addToSet: { savedBooks: input } },
                     { new: true }
 
                 );
@@ -61,7 +61,7 @@ const resolvers = {
                     { new: true }
 
                 );
-                return updatedUser;
+                return updateUser;
             }
             throw new AuthenticationError('Ypu need to be logged in!')
         },
